@@ -1,0 +1,30 @@
+{
+    "name": "joedixon/nova-translation",
+    "description": "A Laravel Nova tool.",
+    "keywords": [
+        "laravel",
+        "nova"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": ">=7.1.0",
+        "joedixon/laravel-translation": "dev-vendor-json-files"
+    },
+    "autoload": {
+        "psr-4": {
+            "Joedixon\\NovaTranslation\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Joedixon\\NovaTranslation\\ToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
+}
