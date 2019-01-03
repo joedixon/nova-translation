@@ -31,3 +31,37 @@ Below are a full list of features:
 - User interface to add new languages and add and update translations
 - Artisan commands to manage your translations
 - Scan your application for missing translations
+
+## Installation
+
+From the root of your Nova application run the following:
+
+`composer require joedixon/nova-translation`
+
+Open `NovaServiceProvider.php` and add update the `registerTools` method as
+follows:
+
+```
+<?php
+
+namespace Laravel\Nova;
+
+...
+use Joedixon\NovaTranslation\NovaTranslation;
+
+class NovaServiceProvider extends ServiceProvider
+{
+    ...
+
+    protected function registerTools()
+    {
+        Nova::tools([
+            ...
+            new NovaTranslation,
+        ]);
+    }
+}
+```
+
+**Note:** Under the hood, this tool uses the `joedixon/laravel-translation` package. You
+can find configuration instructions [here](https://github.com/joedixon/laravel-translation).
