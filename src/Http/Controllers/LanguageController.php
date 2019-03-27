@@ -2,7 +2,7 @@
 
 namespace Joedixon\NovaTranslation\Http\Controllers;
 
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use JoeDixon\Translation\Drivers\Translation;
 use JoeDixon\Translation\Http\Requests\LanguageRequest;
 
