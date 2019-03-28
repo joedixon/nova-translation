@@ -5,7 +5,7 @@ namespace Joedixon\NovaTranslation\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
-use App\Http\Controllers\Controller;
+use Illuminate\Routing\Controller;
 use JoeDixon\Translation\Drivers\Translation;
 use JoeDixon\Translation\Http\Requests\TranslationRequest;
 
