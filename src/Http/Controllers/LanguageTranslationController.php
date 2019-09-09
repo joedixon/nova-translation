@@ -2,6 +2,7 @@
 
 namespace Joedixon\NovaTranslation\Http\Controllers;
 
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
@@ -51,7 +52,7 @@ class LanguageTranslationController extends Controller
 
     public function update(Request $request, $language)
     {
-        if (! str_contains($request->get('group'), 'single')) {
+        if (! Str::contains($request->get('group'), 'single')) {
             $this->translation->addGroupTranslation($language, $request->get('group'), $request->get('key'), $request->get('value') ?: '');
         } else {
             $this->translation->addSingleTranslation($language, $request->get('group'), $request->get('key'), $request->get('value') ?: '');
@@ -84,7 +85,7 @@ class LanguageTranslationController extends Controller
                         continue;
                     }
                     $formattedTranslations[] = [
-                            'id' => str_random(20),
+                            'id' => Str::random(20),
                             'type' => $type,
                             'group' => $group,
                             'key' => $key,
