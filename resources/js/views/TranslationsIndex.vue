@@ -34,9 +34,6 @@
                 <div class="flex items-center ml-auto px-3">
                     <dropdown>
                         <dropdown-trigger
-                            slot-scope="{
-                                toggle,
-                            }"
                             :handle-click="toggle"
                             class="bg-30 px-3 border-2 border-30 rounded"
                             :class="{ 'bg-primary border-primary': filtersAreApplied }"
