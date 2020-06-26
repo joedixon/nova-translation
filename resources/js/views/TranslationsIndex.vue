@@ -11,15 +11,13 @@
                     :placeholder="__('Search')"
                     type="search"
                     v-model="search"
-                    @keydown.stop="performSearch"
-                    @search="performSearch"
                 />
             </div>
             <div class="flex w-full justify-end">
                 <router-link
                     class="cursor-pointer btn btn-default btn-primary"
                 :to="{ name: 'nova-translation.languages.translations.create', params: { language }}"
-                    
+
                     :title="__('Add language')"
                 >
                     {{ __('Add Translation') }}
@@ -30,7 +28,7 @@
         <loading-card :loading="loading" class="card">
 
             <div class="py-3 flex items-center border-b border-50">
-                
+
                 <div class="flex items-center ml-auto px-3">
                     <dropdown>
                         <dropdown-trigger
@@ -58,7 +56,7 @@
                                         @change="groupChanged"
                                     >
                                         <option value="">-----</option>
-                                        <option 
+                                        <option
                                             v-for="group in groups"
                                             :value="group"
                                             :key="group"
@@ -79,7 +77,7 @@
                                         :value="language"
                                         @change="languageChanged"
                                     >
-                                        <option 
+                                        <option
                                             v-for="language in languages"
                                             :value="language"
                                             :key="language"
@@ -113,9 +111,9 @@
                 </div>
             </div>
             <div v-if="!translations.length" class="flex justify-center items-center px-6 py-8">
-                
+
                 <div class="text-center">
-    
+
                     <svg
                         class="mb-3"
                         xmlns="http://www.w3.org/2000/svg"
@@ -179,10 +177,10 @@
                             <td>
                                 <translation-input
                                     :initial-translation="translation.translations[language]"
-                                    :language="language" 
+                                    :language="language"
                                     :group="translation.group"
                                     :translation-key="translation.key"/>
-                            </td>                            
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -259,11 +257,23 @@ export default {
         }
     },
 
+    watch: {
+        search: function () {
+            this.$nextTick(async () => {
+                this.updateQueryString({
+                    page: 1,
+                    search: this.search
+                })
+            });
+            this.listTranslations();
+        }
+    },
+
     methods: {
         listTranslations() {
             this.$nextTick(async () => {
                 const translations = await axios.get(
-                    `/nova-vendor/nova-translation/languages/${this.language}/translations`, 
+                    `/nova-vendor/nova-translation/languages/${this.language}/translations`,
                     {
                         params: {
                             group: this.group,
@@ -273,7 +283,7 @@ export default {
                         }
                     }
                 );
-                
+
                 this.sourceLanguage = translations.data.source_language;
                 this.languages = translations.data.languages;
                 this.groups = translations.data.groups;
