@@ -63,11 +63,11 @@ class LanguageTranslationController extends Controller
 
     public function store(TranslationRequest $request, $language)
     {
+        $namespace = $request->has('namespace') && $request->get('namespace') ? "{$request->get('namespace')}::single" : '';
         if ($request->has('group') && $request->get('group')) {
-            $namespace = $request->has('namespace') && $request->get('namespace') ? "{$request->get('namespace')}::" : '';
             $this->translation->addGroupTranslation($language, "{$namespace}{$request->get('group')}", $request->get('key'), $request->get('value') ?: '');
         } else {
-            $this->translation->addSingleTranslation($language, $request->get('key'), $request->get('value') ?: '');
+            $this->translation->addSingleTranslation($language, "{$namespace}single", $request->get('key'), $request->get('value') ?: '');
         }
 
         return response()->json(['success' => true]);
