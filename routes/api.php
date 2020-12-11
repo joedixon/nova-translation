@@ -16,17 +16,19 @@ use Joedixon\NovaTranslation\Http\Controllers\LanguageTranslationController;
 |
 */
 
-Route::get('languages', LanguageController::class.'@index')
-    ->name('languages.index');
+Route::name('nova.')->group(function () {
+    Route::get('languages', LanguageController::class . '@index')
+        ->name('languages.index');
 
-Route::post('languages', LanguageController::class.'@store')
-    ->name('languages.store');
+    Route::post('languages', LanguageController::class . '@store')
+        ->name('languages.store');
 
-Route::get('languages/{language}/translations', LanguageTranslationController::class.'@index')
-    ->name('languages.translations.index');
+    Route::get('languages/{language}/translations', LanguageTranslationController::class . '@index')
+        ->name('languages.translations.index');
 
-Route::put('languages/{language}/translations', LanguageTranslationController::class.'@update')
-    ->name('languages.translations.update');
+    Route::put('languages/{language}/translations', LanguageTranslationController::class . '@update')
+        ->name('languages.translations.update');
 
-Route::post('languages/{language}/translations', LanguageTranslationController::class.'@store')
-    ->name('languages.translations.store');
+    Route::post('languages/{language}/translations', LanguageTranslationController::class . '@store')
+        ->name('languages.translations.store');
+});
