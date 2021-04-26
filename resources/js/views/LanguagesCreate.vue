@@ -63,6 +63,11 @@ export default {
                 }
             }
         }
-    }
+    },
+    metaInfo() {
+        return {
+            title: 'Create Language',
+        }
+    },
 }
 </script>
