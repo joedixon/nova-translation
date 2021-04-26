@@ -87,6 +87,12 @@ export default {
                 }
             }
         }
-    }
+    },
+
+    metaInfo() {
+        return {
+            title: 'Create Translation',
+        }
+    },
 }
 </script>

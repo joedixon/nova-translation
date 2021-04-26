@@ -386,5 +386,11 @@ export default {
         this.initializePageFromQueryString()
         await this.listTranslations();
     },
+
+    metaInfo() {
+        return {
+            title: 'Translations',
+        }
+    },
 }
 </script>

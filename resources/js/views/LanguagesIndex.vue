@@ -65,6 +65,12 @@ export default {
         }
     },
 
+    metaInfo() {
+        return {
+            title: 'Languages',
+        }
+    },
+
     methods: {
         listLanguages() {
             Nova.request().get('/nova-vendor/nova-translation/languages')
