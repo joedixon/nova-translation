@@ -15,7 +15,7 @@
     },
     "scripts": {
         "lint": "./vendor/bin/pint",
-        "lint:check": "./vendor/bin/pint --test"
+        "lint:check": "./vendor/bin/pint --test -v"
     },
     "autoload": {
         "psr-4": {
