@@ -1,7 +1,7 @@
 Nova.booting((Vue, router, store) => {
-  Vue.config.devtools = process.env.NODE_ENV === 'development'
+    Vue.config.devtools = process.env.NODE_ENV === 'development'
 
-  router.addRoutes([
+    router.addRoutes([
         {
             name: 'nova-translation',
             path: '/nova-translation',
@@ -16,13 +16,13 @@ Nova.booting((Vue, router, store) => {
             name: 'nova-translation.languages.translations.index',
             path: '/nova-translation/languages/translations',
             component: require('./views/TranslationsIndex').default,
-            props: true
+            props: true,
         },
         {
             name: 'nova-translation.languages.translations.create',
             path: '/nova-translation/languages/:language/translations/create',
             component: require('./views/TranslationsCreate').default,
-            props: true
+            props: true,
         },
     ])
 })

@@ -7,16 +7,30 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "check-format": "prettier --list-different 'resources/**/*.{css,js,vue}'",
+        "format": "prettier --write 'resources/**/*.{css,js,vue}'",
+        "lint": "eslint resources/js --fix --ext js,vue",
+        "prepare": "husky install"
     },
     "devDependencies": {
         "cross-env": "7.0.3",
-        "laravel-mix": "6.0.49",
+        "eslint": "^8.17.0",
+        "eslint-config-prettier": "^8.3.0",
+        "eslint-plugin-vue": "^9.1.0",
+        "husky": "^7.0.4",
+        "laravel-mix": "^6.0",
         "laravel-nova": "1.12.3",
+        "lint-staged": "^12.1.2",
+        "prettier": "^2.6.2",
         "resolve-url-loader": "5.0.0",
         "sass": "1.55.0",
         "sass-loader": "12.6.0",
         "vue-loader": "15.10.0",
         "vue-template-compiler": "2.7.10"
+    },
+    "lint-staged": {
+        "resources/**/*.{js,vue}": "eslint --cache --fix",
+        "resources/**/*.{css,js,vue}": "prettier --write"
     }
 }

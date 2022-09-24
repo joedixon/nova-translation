@@ -5,7 +5,7 @@
             <div class="flex w-full justify-end">
                 <router-link
                     class="cursor-pointer btn btn-default btn-primary"
-                    :to="{ name: 'nova-translation.languages.create'}"
+                    :to="{ name: 'nova-translation.languages.create' }"
                     :title="__('Add language')"
                 >
                     {{ __('Add Language') }}
@@ -14,7 +14,8 @@
         </div>
         <loading-view :loading="initialLoading">
             <loading-card :loading="loading" class="card">
-                <table v-if="Object.keys(languages).length > 0"
+                <table
+                    v-if="Object.keys(languages).length > 0"
                     class="table w-full"
                     cellpadding="0"
                     cellspacing="0"
@@ -30,17 +31,17 @@
 
                     <tbody>
                         <tr v-for="language in languages" :key="language">
-                            <td>{{language}}</td>
-                            <td>{{languages[language]}}</td>
+                            <td>{{ language }}</td>
+                            <td>{{ languages[language] }}</td>
                             <td>
                                 <router-link
                                     class="cursor-pointer text-70 hover:text-primary"
-                                    :to="{ 
+                                    :to="{
                                         name: 'nova-translation.languages.translations.index',
                                         title: __('View the translations for the language'),
                                         query: {
-                                            language: language
-                                        }
+                                            language: language,
+                                        },
                                     }"
                                     title="View translations"
                                 >
@@ -56,30 +57,31 @@
 </template>
 
 <script>
-export default {    
-    data() {
-        return {
-            initialLoading: true,
-            loading: false,
-            languages: {}
-        }
-    },
-
+export default {
     metaInfo() {
         return {
             title: 'Languages',
         }
     },
 
+    data() {
+        return {
+            initialLoading: true,
+            loading: false,
+            languages: {},
+        }
+    },
+
     methods: {
         listLanguages() {
-            Nova.request().get('/nova-vendor/nova-translation/languages')
-                .then((response) => {
-                    this.languages = response.data;
-                    this.initialLoading = false;
-                    this.loading = false;
+            Nova.request()
+                .get('/nova-vendor/nova-translation/languages')
+                .then(response => {
+                    this.languages = response.data
+                    this.initialLoading = false
+                    this.loading = false
                 })
-        }
+        },
     },
 
     created() {
