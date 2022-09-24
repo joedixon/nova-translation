@@ -28,6 +28,6 @@
     "minimum-stability": "dev",
     "prefer-stable": true,
     "require-dev": {
-        "laravel/pint": "^1.2"
+        "laravel/pint": "1.2.0"
     }
 }
