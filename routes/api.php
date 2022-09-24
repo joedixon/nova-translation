@@ -15,17 +15,19 @@ use Joedixon\NovaTranslation\Http\Controllers\LanguageTranslationController;
 |
 */
 
-Route::get('languages', LanguageController::class . '@index')
-    ->name('nova-translation.languages.index');
+Route::name('nova.')->group(function () {
+    Route::get('languages', LanguageController::class.'@index')
+        ->name('nova-translation.languages.index');
 
-Route::post('languages', LanguageController::class . '@store')
-    ->name('nova-translation.languages.store');
+    Route::post('languages', LanguageController::class.'@store')
+        ->name('nova-translation.languages.store');
 
-Route::get('languages/{language}/translations', LanguageTranslationController::class . '@index')
-    ->name('nova-translation.languages.translations.index');
+    Route::get('languages/{language}/translations', LanguageTranslationController::class.'@index')
+        ->name('nova-translation.languages.translations.index');
 
-Route::put('languages/{language}/translations', LanguageTranslationController::class . '@update')
-    ->name('nova-translation.languages.translations.update');
+    Route::put('languages/{language}/translations', LanguageTranslationController::class.'@update')
+        ->name('nova-translation.languages.translations.update');
 
-Route::post('languages/{language}/translations', LanguageTranslationController::class . '@store')
-    ->name('nova-translation.languages.translations.store');
+    Route::post('languages/{language}/translations', LanguageTranslationController::class.'@store')
+        ->name('nova-translation.languages.translations.store');
+});
