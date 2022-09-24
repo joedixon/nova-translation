@@ -14,7 +14,8 @@
         "laravel/pint": "1.2.0"
     },
     "scripts": {
-        "lint": "./vendor/bin/pint"
+        "lint": "./vendor/bin/pint",
+        "lint:check": "./vendor/bin/pint --test"
     },
     "autoload": {
         "psr-4": {
