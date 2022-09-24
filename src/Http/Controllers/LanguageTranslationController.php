@@ -39,15 +39,15 @@ class LanguageTranslationController extends Controller
 
         return response()->json([
             'source_language' => config('app.locale'),
-            'groups' => $groups,
-            'languages' => $languages,
-            'translations' => new Paginator(array_slice($this->formatTranslations($translations, $language), $offset * $perPage), $perPage, $currentPage),
+            'groups'          => $groups,
+            'languages'       => $languages,
+            'translations'    => new Paginator(array_slice($this->formatTranslations($translations, $language), $offset * $perPage), $perPage, $currentPage),
         ]);
     }
 
     public function update(Request $request, $language)
     {
-        if (! Str::contains($request->get('group'), 'single')) {
+        if (!Str::contains($request->get('group'), 'single')) {
             $this->translation->addGroupTranslation($language, $request->get('group'), $request->get('key'), $request->get('value') ?: '');
         } else {
             $this->translation->addSingleTranslation($language, $request->get('group'), $request->get('key'), $request->get('value') ?: '');
@@ -80,10 +80,10 @@ class LanguageTranslationController extends Controller
                         continue;
                     }
                     $formattedTranslations[] = [
-                        'id' => Str::random(20),
-                        'type' => $type,
-                        'group' => $group,
-                        'key' => $key,
+                        'id'           => Str::random(20),
+                        'type'         => $type,
+                        'group'        => $group,
+                        'key'          => $key,
                         'translations' => $translation,
                     ];
                 }
