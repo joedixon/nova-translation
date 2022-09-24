@@ -33,5 +33,10 @@
     "lint-staged": {
         "resources/**/*.{js,vue}": "eslint --cache --fix",
         "resources/**/*.{css,js,vue}": "prettier --write"
+    },
+    "dependencies": {
+        "css-loader": "^6.7.1",
+        "postcss": "^8.4.16",
+        "webpack": "^5.74.0"
     }
 }
