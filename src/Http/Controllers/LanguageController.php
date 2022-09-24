@@ -8,11 +8,8 @@ use JoeDixon\Translation\Http\Requests\LanguageRequest;
 
 class LanguageController extends Controller
 {
-    private $translation;
-
-    public function __construct(Translation $translation)
+    public function __construct(private readonly Translation $translation)
     {
-        $this->translation = $translation;
     }
 
     public function index()
@@ -22,7 +19,7 @@ class LanguageController extends Controller
 
     public function store(LanguageRequest $request)
     {
-        $this->translation->addLanguage($request->locale, $request->name);
+        $this->translation->addLanguage($request->getLocale(), $request->name);
 
         return response()->json(['success' => true]);
     }

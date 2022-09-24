@@ -2,11 +2,11 @@
 
 namespace Joedixon\NovaTranslation;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Joedixon\NovaTranslation\Http\Middleware\Authorize;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -17,7 +17,7 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-translation');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'nova-translation');
 
         $this->app->booted(function () {
             $this->routes();
@@ -41,7 +41,7 @@ class ToolServiceProvider extends ServiceProvider
 
         Route::middleware(['nova', Authorize::class])
                 ->prefix('nova-vendor/nova-translation')
-                ->group(__DIR__.'/../routes/api.php');
+                ->group(__DIR__ . '/../routes/api.php');
     }
 
     /**

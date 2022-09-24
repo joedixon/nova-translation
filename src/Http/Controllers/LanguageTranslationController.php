@@ -2,21 +2,18 @@
 
 namespace Joedixon\NovaTranslation\Http\Controllers;
 
-use Illuminate\Support\Str;
 use Illuminate\Http\Request;
-use Illuminate\Support\Collection;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Controller;
+use Illuminate\Support\Collection;
+use Illuminate\Support\Str;
 use JoeDixon\Translation\Drivers\Translation;
 use JoeDixon\Translation\Http\Requests\TranslationRequest;
 
 class LanguageTranslationController extends Controller
 {
-    private $translation;
-
-    public function __construct(Translation $translation)
+    public function __construct(private readonly Translation $translation)
     {
-        $this->translation = $translation;
     }
 
     public function index(Request $request, $language)
@@ -30,9 +27,7 @@ class LanguageTranslationController extends Controller
                 $translations = $translations->get('single');
                 $translations = new Collection(['single' => $translations]);
             } else {
-                $translations = $translations->get('group')->filter(function ($values, $group) use ($request) {
-                    return $group === $request->get('group');
-                });
+                $translations = $translations->get('group')->filter(fn($values, $group) => $group === $request->get('group'));
 
                 $translations = new Collection(['group' => $translations]);
             }
@@ -46,7 +41,7 @@ class LanguageTranslationController extends Controller
             'source_language' => config('app.locale'),
             'groups' => $groups,
             'languages' => $languages,
-            'translations' => new Paginator(array_slice($this->formatTranslations($translations, $language), $offset * $perPage), $perPage, $currentPage)
+            'translations' => new Paginator(array_slice($this->formatTranslations($translations, $language), $offset * $perPage), $perPage, $currentPage),
         ]);
     }
 
@@ -73,7 +68,7 @@ class LanguageTranslationController extends Controller
         return response()->json(['success' => true]);
     }
 
-    private function formatTranslations($translations, $language)
+    private function formatTranslations(\Illuminate\Support\Collection $translations, $language)
     {
         $formattedTranslations = [];
         foreach ($translations as $type => $values) {
@@ -85,15 +80,16 @@ class LanguageTranslationController extends Controller
                         continue;
                     }
                     $formattedTranslations[] = [
-                            'id' => Str::random(20),
-                            'type' => $type,
-                            'group' => $group,
-                            'key' => $key,
-                            'translations' => $translation
-                        ];
+                        'id' => Str::random(20),
+                        'type' => $type,
+                        'group' => $group,
+                        'key' => $key,
+                        'translations' => $translation,
+                    ];
                 }
             }
         }
+
         return $formattedTranslations;
     }
 }
