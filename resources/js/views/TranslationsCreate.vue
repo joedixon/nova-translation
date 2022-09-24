@@ -2,7 +2,7 @@
     <div>
         <heading class="mb-3">{{ __('Add a new translation') }}</heading>
         <card class="overflow-hidden">
-            <form @submit.prevent="createTranslation" autocomplete="off">
+            <form autocomplete="off" @submit.prevent="createTranslation">
                 <form-text-field
                     :field="{
                         attribute: 'group',

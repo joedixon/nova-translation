@@ -7,10 +7,10 @@
                 <icon type="search" class="absolute search-icon-center ml-3 text-70" />
 
                 <input
+                    v-model="search"
                     class="appearance-none form-control form-input w-search pl-search"
                     :placeholder="__('Search')"
                     type="search"
-                    v-model="search"
                 />
             </div>
             <div class="flex w-full justify-end">
@@ -53,7 +53,7 @@
                                         @change="groupChanged"
                                     >
                                         <option value="">-----</option>
-                                        <option v-for="group in groups" :value="group" :key="group">
+                                        <option v-for="group in groups" :key="group" :value="group">
                                             {{ group }}
                                         </option>
                                     </select>
@@ -70,7 +70,7 @@
                                         :value="language"
                                         @change="languageChanged"
                                     >
-                                        <option v-for="language in languages" :value="language" :key="language">
+                                        <option v-for="language in languages" :key="language" :value="language">
                                             {{ language }}
                                         </option>
                                     </select>
@@ -163,8 +163,8 @@
                                 'text-80 opacity-50': !hasPreviousPages,
                             }"
                             rel="prev"
-                            @click.prevent="selectPreviousPage()"
                             dusk="previous"
+                            @click.prevent="selectPreviousPage()"
                         >
                             {{ __('Previous') }}
                         </button>
@@ -180,8 +180,8 @@
                                 'text-80 opacity-50': !hasMorePages,
                             }"
                             rel="next"
-                            @click.prevent="selectNextPage()"
                             dusk="next"
+                            @click.prevent="selectNextPage()"
                         >
                             {{ __('Next') }}
                         </button>
@@ -201,6 +201,10 @@ export default {
         return {
             title: 'Translations',
         }
+    },
+
+    components: {
+        'translation-input': TranslationInput,
     },
 
     mixins: [InteractsWithQueryString],
@@ -238,6 +242,15 @@ export default {
             })
             this.listTranslations()
         },
+    },
+
+    async created() {
+        this.initializeSearchFromQueryString()
+        this.initializeGroupFromQueryString()
+        this.initializePerPageFromQueryString()
+        this.initializeLanguageFromQueryString()
+        this.initializePageFromQueryString()
+        await this.listTranslations()
     },
 
     methods: {
@@ -350,19 +363,6 @@ export default {
         initializePageFromQueryString() {
             this.currentPage = this.$route.query['page'] || this.currentPage
         },
-    },
-
-    components: {
-        'translation-input': TranslationInput,
-    },
-
-    async created() {
-        this.initializeSearchFromQueryString()
-        this.initializeGroupFromQueryString()
-        this.initializePerPageFromQueryString()
-        this.initializeLanguageFromQueryString()
-        this.initializePageFromQueryString()
-        await this.listTranslations()
     },
 }
 </script>

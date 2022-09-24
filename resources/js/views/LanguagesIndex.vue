@@ -72,6 +72,10 @@ export default {
         }
     },
 
+    created() {
+        this.listLanguages()
+    },
+
     methods: {
         listLanguages() {
             Nova.request()
@@ -82,10 +86,6 @@ export default {
                     this.loading = false
                 })
         },
-    },
-
-    created() {
-        this.listLanguages()
     },
 }
 </script>

@@ -1,8 +1,7 @@
 {
   "extends": [
-    "eslint:recommended",
-    "plugin:vue/essential",
-    "prettier"
+    "plugin:vue/recommended",
+    "plugin:prettier-vue/recommended"
   ],
   "parserOptions": {
     "ecmaVersion": 2021
@@ -18,7 +17,6 @@
     "es6": true
   },
   "rules": {
-    "vue/html-indent": ["error", 4],
     "semi": ["error", "never"]
   }
 }

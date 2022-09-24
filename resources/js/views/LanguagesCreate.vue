@@ -2,7 +2,7 @@
     <div>
         <heading class="mb-3">{{ __('Add a new language') }}</heading>
         <card class="overflow-hidden">
-            <form @submit.prevent="createLanguage" autocomplete="off">
+            <form autocomplete="off" @submit.prevent="createLanguage">
                 <form-text-field
                     :field="{
                         attribute: 'name',
