@@ -30,7 +30,7 @@
         "sass": "1.55.0",
         "sass-loader": "13.1.0",
         "vue-loader": "15.10.0",
-        "vue-template-compiler": "2.7.12",
+        "vue-template-compiler": "2.7.13",
         "webpack": "5.74.0"
     },
     "lint-staged": {
