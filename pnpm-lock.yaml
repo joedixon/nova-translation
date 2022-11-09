@@ -17,7 +17,7 @@ specifiers:
   sass: 1.56.1
   sass-loader: 13.1.0
   vue-loader: 15.10.0
-  vue-template-compiler: 2.7.13
+  vue-template-compiler: 2.7.14
   webpack: 5.74.0
 
 devDependencies:
@@ -36,8 +36,8 @@ devDependencies:
   resolve-url-loader: 5.0.0
   sass: 1.56.1
   sass-loader: 13.1.0_sass@1.56.1+webpack@5.74.0
-  vue-loader: 15.10.0_m252fu66fivcrdajfhoxhvxrne
-  vue-template-compiler: 2.7.13
+  vue-loader: 15.10.0_fczc4mmgpxfp4erkfsuzsyb5le
+  vue-template-compiler: 2.7.14
   webpack: 5.74.0
 
 packages:
@@ -6395,7 +6395,7 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.10.0_m252fu66fivcrdajfhoxhvxrne:
+  /vue-loader/15.10.0_fczc4mmgpxfp4erkfsuzsyb5le:
     resolution: {integrity: sha512-VU6tuO8eKajrFeBzMssFUP9SvakEeeSi1BxdTH5o3+1yUyrldp8IERkSdXlMI2t4kxF2sqYUDsQY+WJBxzBmZg==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
@@ -6417,7 +6417,7 @@ packages:
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
       vue-style-loader: 4.1.3
-      vue-template-compiler: 2.7.13
+      vue-template-compiler: 2.7.14
       webpack: 5.74.0
     transitivePeerDependencies:
       - arc-templates
@@ -6482,8 +6482,8 @@ packages:
       loader-utils: 1.4.0
     dev: true
 
-  /vue-template-compiler/2.7.13:
-    resolution: {integrity: sha512-jYM6TClwDS9YqP48gYrtAtaOhRKkbYmbzE+Q51gX5YDr777n7tNI/IZk4QV4l/PjQPNh/FVa/E92sh/RqKMrog==}
+  /vue-template-compiler/2.7.14:
+    resolution: {integrity: sha512-zyA5Y3ArvVG0NacJDkkzJuPQDF8RFeRlzV2vLeSnhSpieO6LK2OVbdLPi5MPPs09Ii+gMO8nY4S3iKQxBxDmWQ==}
     dependencies:
       de-indent: 1.0.2
       he: 1.2.0
