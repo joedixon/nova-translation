@@ -15,7 +15,7 @@ specifiers:
   prettier: 2.7.1
   resolve-url-loader: 5.0.0
   sass: 1.56.1
-  sass-loader: 13.1.0
+  sass-loader: 13.2.0
   vue-loader: 15.10.0
   vue-template-compiler: 2.7.14
   webpack: 5.75.0
@@ -35,7 +35,7 @@ devDependencies:
   prettier: 2.7.1
   resolve-url-loader: 5.0.0
   sass: 1.56.1
-  sass-loader: 13.1.0_sass@1.56.1+webpack@5.75.0
+  sass-loader: 13.2.0_sass@1.56.1+webpack@5.75.0
   vue-loader: 15.10.0_tqysfoed3q5cx6v2qkbrnt4hp4
   vue-template-compiler: 2.7.14
   webpack: 5.75.0
@@ -5709,12 +5709,12 @@ packages:
     resolution: {integrity: sha512-YZo3K82SD7Riyi0E1EQPojLz7kpepnSQI9IyPbHHg1XXXevb5dJI7tpyN2ADxGcQbHG7vcyRHk0cbwqcQriUtg==}
     dev: true
 
-  /sass-loader/13.1.0_sass@1.56.1+webpack@5.75.0:
-    resolution: {integrity: sha512-tZS1RJQ2n2+QNyf3CCAo1H562WjL/5AM6Gi8YcPVVoNxQX8d19mx8E+8fRrMWsyc93ZL6Q8vZDSM0FHVTJaVnQ==}
+  /sass-loader/13.2.0_sass@1.56.1+webpack@5.75.0:
+    resolution: {integrity: sha512-JWEp48djQA4nbZxmgC02/Wh0eroSUutulROUusYJO9P9zltRbNN80JCBHqRGzjd4cmZCa/r88xgfkjGD0TXsHg==}
     engines: {node: '>= 14.15.0'}
     peerDependencies:
       fibers: '>= 3.1.0'
-      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0
+      node-sass: ^4.0.0 || ^5.0.0 || ^6.0.0 || ^7.0.0 || ^8.0.0
       sass: ^1.3.0
       sass-embedded: '*'
       webpack: ^5.0.0
