@@ -2,7 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   cross-env: 7.0.3
-  css-loader: 6.7.1
+  css-loader: 6.7.2
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier-vue: 4.2.0
@@ -22,7 +22,7 @@ specifiers:
 
 devDependencies:
   cross-env: 7.0.3
-  css-loader: 6.7.1_webpack@5.75.0
+  css-loader: 6.7.2_webpack@5.75.0
   eslint: 8.27.0
   eslint-config-prettier: 8.5.0_eslint@8.27.0
   eslint-plugin-prettier-vue: 4.2.0
@@ -36,7 +36,7 @@ devDependencies:
   resolve-url-loader: 5.0.0
   sass: 1.56.1
   sass-loader: 13.2.0_sass@1.56.1+webpack@5.75.0
-  vue-loader: 15.10.0_tqysfoed3q5cx6v2qkbrnt4hp4
+  vue-loader: 15.10.0_z2a3irye3y56jaq776fqxbsiea
   vue-template-compiler: 2.7.14
   webpack: 5.75.0
 
@@ -2819,12 +2819,12 @@ packages:
       postcss-modules-values: 4.0.0_postcss@8.4.19
       postcss-value-parser: 4.2.0
       schema-utils: 3.1.1
-      semver: 7.3.7
+      semver: 7.3.8
       webpack: 5.75.0
     dev: true
 
-  /css-loader/6.7.1_webpack@5.75.0:
-    resolution: {integrity: sha512-yB5CNFa14MbPJcomwNh3wLThtkZgcNyI2bNMRt8iE5Z8Vwl7f8vQXFAzn2HDOJvtDq2NTZBUGMSUNNyrv3/+cw==}
+  /css-loader/6.7.2_webpack@5.75.0:
+    resolution: {integrity: sha512-oqGbbVcBJkm8QwmnNzrFrWTnudnRZC+1eXikLJl0n4ljcfotgRifpg2a1lKy8jTrc4/d9A/ap1GFq1jDKG7J+Q==}
     engines: {node: '>= 12.13.0'}
     peerDependencies:
       webpack: ^5.0.0
@@ -2836,7 +2836,7 @@ packages:
       postcss-modules-scope: 3.0.0_postcss@8.4.19
       postcss-modules-values: 4.0.0_postcss@8.4.19
       postcss-value-parser: 4.2.0
-      semver: 7.3.7
+      semver: 7.3.8
       webpack: 5.75.0
     dev: true
 
@@ -4691,7 +4691,7 @@ packages:
     dependencies:
       growly: 1.3.0
       is-wsl: 2.2.0
-      semver: 7.3.7
+      semver: 7.3.8
       shellwords: 0.1.1
       uuid: 8.3.2
       which: 2.0.2
@@ -5095,7 +5095,7 @@ packages:
       cosmiconfig: 7.0.1
       klona: 2.0.5
       postcss: 8.4.19
-      semver: 7.3.7
+      semver: 7.3.8
       webpack: 5.75.0
     dev: true
 
@@ -5796,6 +5796,14 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
+  /semver/7.3.8:
+    resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
+    engines: {node: '>=10'}
+    hasBin: true
+    dependencies:
+      lru-cache: 6.0.0
+    dev: true
+
   /send/0.18.0:
     resolution: {integrity: sha512-qqWzuOjSFOuqPjFe4NOsMLafToQQwBSOEpS+FwEt3A2V3vKubTquT3vmLTQpFgMXp8AlFWFuP1qKaJZOtPpVXg==}
     engines: {node: '>= 0.8.0'}
@@ -6386,7 +6394,7 @@ packages:
       espree: 9.4.0
       esquery: 1.4.0
       lodash: 4.17.21
-      semver: 7.3.7
+      semver: 7.3.8
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -6395,7 +6403,7 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.10.0_tqysfoed3q5cx6v2qkbrnt4hp4:
+  /vue-loader/15.10.0_z2a3irye3y56jaq776fqxbsiea:
     resolution: {integrity: sha512-VU6tuO8eKajrFeBzMssFUP9SvakEeeSi1BxdTH5o3+1yUyrldp8IERkSdXlMI2t4kxF2sqYUDsQY+WJBxzBmZg==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
@@ -6412,7 +6420,7 @@ packages:
         optional: true
     dependencies:
       '@vue/component-compiler-utils': 3.3.0
-      css-loader: 6.7.1_webpack@5.75.0
+      css-loader: 6.7.2_webpack@5.75.0
       hash-sum: 1.0.2
       loader-utils: 1.4.0
       vue-hot-reload-api: 2.3.4
