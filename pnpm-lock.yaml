@@ -16,7 +16,7 @@ specifiers:
   resolve-url-loader: 5.0.0
   sass: 1.56.1
   sass-loader: 13.2.0
-  vue-loader: 15.10.0
+  vue-loader: 15.10.1
   vue-template-compiler: 2.7.14
   webpack: 5.75.0
 
@@ -36,7 +36,7 @@ devDependencies:
   resolve-url-loader: 5.0.0
   sass: 1.56.1
   sass-loader: 13.2.0_sass@1.56.1+webpack@5.75.0
-  vue-loader: 15.10.0_z2a3irye3y56jaq776fqxbsiea
+  vue-loader: 15.10.1_z2a3irye3y56jaq776fqxbsiea
   vue-template-compiler: 2.7.14
   webpack: 5.75.0
 
@@ -6403,8 +6403,8 @@ packages:
     resolution: {integrity: sha512-BXq3jwIagosjgNVae6tkHzzIk6a8MHFtzAdwhnV5VlvPTFxDCvIttgSiHWjdGoTJvXtmRu5HacExfdarRcFhog==}
     dev: true
 
-  /vue-loader/15.10.0_z2a3irye3y56jaq776fqxbsiea:
-    resolution: {integrity: sha512-VU6tuO8eKajrFeBzMssFUP9SvakEeeSi1BxdTH5o3+1yUyrldp8IERkSdXlMI2t4kxF2sqYUDsQY+WJBxzBmZg==}
+  /vue-loader/15.10.1_z2a3irye3y56jaq776fqxbsiea:
+    resolution: {integrity: sha512-SaPHK1A01VrNthlix6h1hq4uJu7S/z0kdLUb6klubo738NeQoLbS6V9/d8Pv19tU0XdQKju3D1HSKuI8wJ5wMA==}
     peerDependencies:
       '@vue/compiler-sfc': ^3.0.8
       cache-loader: '*'
