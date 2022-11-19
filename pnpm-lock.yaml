@@ -3,7 +3,7 @@ lockfileVersion: 5.4
 specifiers:
   cross-env: 7.0.3
   css-loader: 6.7.2
-  eslint: 8.27.0
+  eslint: 8.28.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier-vue: 4.2.0
   eslint-plugin-vue: 9.7.0
@@ -23,10 +23,10 @@ specifiers:
 devDependencies:
   cross-env: 7.0.3
   css-loader: 6.7.2_webpack@5.75.0
-  eslint: 8.27.0
-  eslint-config-prettier: 8.5.0_eslint@8.27.0
+  eslint: 8.28.0
+  eslint-config-prettier: 8.5.0_eslint@8.28.0
   eslint-plugin-prettier-vue: 4.2.0
-  eslint-plugin-vue: 9.7.0_eslint@8.27.0
+  eslint-plugin-vue: 9.7.0_eslint@8.28.0
   husky: 8.0.2
   laravel-mix: 6.0.49_upg3rk2kpasnbk27hkqapxaxfq
   laravel-nova: 1.12.3
@@ -3195,13 +3195,13 @@ packages:
     engines: {node: '>=10'}
     dev: true
 
-  /eslint-config-prettier/8.5.0_eslint@8.27.0:
+  /eslint-config-prettier/8.5.0_eslint@8.28.0:
     resolution: {integrity: sha512-obmWKLUNCnhtQRKc+tmnYuQl0pFU1ibYJQ5BGhTVB08bHe9wC8qUeG7c08dj9XX+AuPj1YSGSQIHl1pnDHZR0Q==}
     hasBin: true
     peerDependencies:
       eslint: '>=7.0.0'
     dependencies:
-      eslint: 8.27.0
+      eslint: 8.28.0
     dev: true
 
   /eslint-plugin-prettier-vue/4.2.0:
@@ -3214,19 +3214,19 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-vue/9.7.0_eslint@8.27.0:
+  /eslint-plugin-vue/9.7.0_eslint@8.28.0:
     resolution: {integrity: sha512-DrOO3WZCZEwcLsnd3ohFwqCoipGRSTKTBTnLwdhqAbYZtzWl0o7D+D8ZhlmiZvABKTEl8AFsqH1GHGdybyoQmw==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
     dependencies:
-      eslint: 8.27.0
-      eslint-utils: 3.0.0_eslint@8.27.0
+      eslint: 8.28.0
+      eslint-utils: 3.0.0_eslint@8.28.0
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.10
       semver: 7.3.7
-      vue-eslint-parser: 9.1.0_eslint@8.27.0
+      vue-eslint-parser: 9.1.0_eslint@8.28.0
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
       - supports-color
@@ -3248,13 +3248,13 @@ packages:
       estraverse: 5.3.0
     dev: true
 
-  /eslint-utils/3.0.0_eslint@8.27.0:
+  /eslint-utils/3.0.0_eslint@8.28.0:
     resolution: {integrity: sha512-uuQC43IGctw68pJA1RgbQS8/NP7rch6Cwd4j3ZBtgo4/8Flj4eGE7ZYSZRN3iq5pVUv6GPdW5Z1RFleo84uLDA==}
     engines: {node: ^10.0.0 || ^12.0.0 || >= 14.0.0}
     peerDependencies:
       eslint: '>=5'
     dependencies:
-      eslint: 8.27.0
+      eslint: 8.28.0
       eslint-visitor-keys: 2.1.0
     dev: true
 
@@ -3268,8 +3268,8 @@ packages:
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     dev: true
 
-  /eslint/8.27.0:
-    resolution: {integrity: sha512-0y1bfG2ho7mty+SiILVf9PfuRA49ek4Nc60Wmmu62QlobNR+CeXa4xXIJgcuwSQgZiWaPH+5BDsctpIW0PR/wQ==}
+  /eslint/8.28.0:
+    resolution: {integrity: sha512-S27Di+EVyMxcHiwDrFzk8dJYAaD+/5SoWKxL1ri/71CRHsnJnRDPNt2Kzj24+MT9FDupf4aqqyqPrvI8MvQ4VQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
     hasBin: true
     dependencies:
@@ -3284,7 +3284,7 @@ packages:
       doctrine: 3.0.0
       escape-string-regexp: 4.0.0
       eslint-scope: 7.1.1
-      eslint-utils: 3.0.0_eslint@8.27.0
+      eslint-utils: 3.0.0_eslint@8.28.0
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
       esquery: 1.4.0
@@ -6381,14 +6381,14 @@ packages:
     resolution: {integrity: sha512-2ham8XPWTONajOR0ohOKOHXkm3+gaBmGut3SRuu75xLd/RRaY6vqgh8NBYYk7+RW3u5AtzPQZG8F10LHkl0lAQ==}
     dev: true
 
-  /vue-eslint-parser/9.1.0_eslint@8.27.0:
+  /vue-eslint-parser/9.1.0_eslint@8.28.0:
     resolution: {integrity: sha512-NGn/iQy8/Wb7RrRa4aRkokyCZfOUWk19OP5HP6JEozQFX5AoS/t+Z0ZN7FY4LlmWc4FNI922V7cvX28zctN8dQ==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: '>=6.0.0'
     dependencies:
       debug: 4.3.4
-      eslint: 8.27.0
+      eslint: 8.28.0
       eslint-scope: 7.1.1
       eslint-visitor-keys: 3.3.0
       espree: 9.4.0
