@@ -12,7 +12,7 @@ specifiers:
   laravel-nova: 1.12.3
   lint-staged: 13.0.3
   postcss: 8.4.19
-  prettier: 2.7.1
+  prettier: 2.8.0
   resolve-url-loader: 5.0.0
   sass: 1.56.1
   sass-loader: 13.2.0
@@ -32,7 +32,7 @@ devDependencies:
   laravel-nova: 1.12.3
   lint-staged: 13.0.3
   postcss: 8.4.19
-  prettier: 2.7.1
+  prettier: 2.8.0
   resolve-url-loader: 5.0.0
   sass: 1.56.1
   sass-loader: 13.2.0_sass@1.56.1+webpack@5.75.0
@@ -1583,7 +1583,7 @@ packages:
       source-map: 0.6.1
       vue-template-es2015-compiler: 1.9.1
     optionalDependencies:
-      prettier: 2.7.1
+      prettier: 2.8.0
     transitivePeerDependencies:
       - arc-templates
       - atpl
@@ -3210,7 +3210,7 @@ packages:
     dependencies:
       '@vue/compiler-sfc': 3.2.39
       chalk: 4.1.2
-      prettier: 2.7.1
+      prettier: 2.8.0
       prettier-linter-helpers: 1.0.0
     dev: true
 
@@ -5393,11 +5393,10 @@ packages:
       fast-diff: 1.2.0
     dev: true
 
-  /prettier/2.7.1:
-    resolution: {integrity: sha512-ujppO+MkdPqoVINuDFDRLClm7D78qbDt0/NR+wp5FqEZOoTNAjPHWj17QRhu7geIHJfcNhRk1XVQmF8Bp3ye+g==}
+  /prettier/2.8.0:
+    resolution: {integrity: sha512-9Lmg8hTFZKG0Asr/kW9Bp8tJjRVluO8EJQVfY2T7FMw9T5jy4I/Uvx0Rca/XWf50QQ1/SS48+6IJWnrb+2yemA==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-    requiresBuild: true
     dev: true
 
   /pretty-time/1.1.0:
