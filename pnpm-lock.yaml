@@ -6,7 +6,7 @@ specifiers:
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0
   eslint-plugin-prettier-vue: 4.2.0
-  eslint-plugin-vue: 9.7.0
+  eslint-plugin-vue: 9.8.0
   husky: 8.0.2
   laravel-mix: 6.0.49
   laravel-nova: 1.12.3
@@ -26,7 +26,7 @@ devDependencies:
   eslint: 8.28.0
   eslint-config-prettier: 8.5.0_eslint@8.28.0
   eslint-plugin-prettier-vue: 4.2.0
-  eslint-plugin-vue: 9.7.0_eslint@8.28.0
+  eslint-plugin-vue: 9.8.0_eslint@8.28.0
   husky: 8.0.2
   laravel-mix: 6.0.49_upg3rk2kpasnbk27hkqapxaxfq
   laravel-nova: 1.12.3
@@ -3214,8 +3214,8 @@ packages:
       prettier-linter-helpers: 1.0.0
     dev: true
 
-  /eslint-plugin-vue/9.7.0_eslint@8.28.0:
-    resolution: {integrity: sha512-DrOO3WZCZEwcLsnd3ohFwqCoipGRSTKTBTnLwdhqAbYZtzWl0o7D+D8ZhlmiZvABKTEl8AFsqH1GHGdybyoQmw==}
+  /eslint-plugin-vue/9.8.0_eslint@8.28.0:
+    resolution: {integrity: sha512-E/AXwcTzunyzM83C2QqDHxepMzvI2y6x+mmeYHbVDQlKFqmKYvRrhaVixEeeG27uI44p9oKDFiyCRw4XxgtfHA==}
     engines: {node: ^14.17.0 || >=16.0.0}
     peerDependencies:
       eslint: ^6.2.0 || ^7.0.0 || ^8.0.0
@@ -3225,7 +3225,7 @@ packages:
       natural-compare: 1.4.0
       nth-check: 2.1.1
       postcss-selector-parser: 6.0.10
-      semver: 7.3.7
+      semver: 7.3.8
       vue-eslint-parser: 9.1.0_eslint@8.28.0
       xml-name-validator: 4.0.0
     transitivePeerDependencies:
