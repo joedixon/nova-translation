@@ -14,6 +14,19 @@ use Laravel\Nova\Http\Requests\NovaRequest;
 |
 */
 
+
 Route::get('/', function (NovaRequest $request) {
-    return inertia('LanguageIndex');
+    return inertia('LanguageIndex', ['novaPath' => '/'.trim(config('nova.path'), '/')]);
+});
+
+Route::get('languages/create', function (NovaRequest $request) {
+    return inertia('LanguageCreate', ['novaPath' => '/'.trim(config('nova.path'), '/')]);
+});
+
+Route::get('languages/translations', function (NovaRequest $request) {
+    return inertia('TranslationIndex', ['novaPath' => '/'.trim(config('nova.path'), '/')]);
+});
+
+Route::get('languages/translations/{language}/create', function (NovaRequest $request, $language) {
+    return inertia('TranslationCreate', ['novaPath' => '/'.trim(config('nova.path'), '/'), 'language' => $language]);
 });

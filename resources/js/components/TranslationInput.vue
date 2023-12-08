@@ -11,7 +11,7 @@
             v-on:focus="setActive"
             v-on:blur="storeTranslation"
             ref="trans"
-        class="w-full border-none resize-none bg-transparent h-auto p-0 rounded font-light"
+        class="w-full border-none resize-none bg-transparent h-auto p-0 rounded font-light focus:ring active:ring focus:border-primary focus:border-solid focus:border"
         ></textarea>
     </div>
 </template>
@@ -42,7 +42,7 @@
                     return;
                 }
                 this.isLoading = true;
-                axios.put(`/nova-vendor/nova-translation/languages/${this.language}/translations`, {
+                Nova.request().put(`/nova-vendor/nova-translation/languages/${this.language}/translations`, {
                     language: this.language,
                     group: this.group,
                     key: this.translationKey,

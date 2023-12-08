@@ -6,9 +6,14 @@
 //     Vue.inertia("NovaTranslationTranslationsCreate", require("./views/TranslationsCreate").default);
 // });
 
-import LanguageIndex from './views/LanguagesIndex'
+import LanguagesIndex from './views/LanguagesIndex'
+import LanguagesCreate from './views/LanguagesCreate'
+import TranslationsIndex from './views/TranslationsIndex'
+import TranslationsCreate from './views/TranslationsCreate'
 
 Nova.booting((app, store) => {
-  Nova.inertia('Test', Tool)
-  Nova.inertia('LanguageIndex', LanguageIndex)
+  Nova.inertia('LanguageIndex', LanguagesIndex)
+  Nova.inertia('LanguageCreate', LanguagesCreate)
+  Nova.inertia('TranslationIndex', TranslationsIndex)
+  Nova.inertia('TranslationCreate', TranslationsCreate)
 })

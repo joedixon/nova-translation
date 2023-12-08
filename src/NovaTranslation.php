@@ -30,6 +30,6 @@ class NovaTranslation extends Tool
     {
         return MenuSection::make('Nova Translation')
             ->path('/nova-translation')
-            ->icon('server');
+            ->icon('globe');
     }
 }

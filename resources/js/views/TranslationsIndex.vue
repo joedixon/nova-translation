@@ -1,29 +1,22 @@
 <template>
     <loading-view :loading="initialLoading">
-        <heading class="mb-6">{{ __('Translations') }}</heading>
-        <div class="flex">
-            <!-- Search -->
-            <div class="relative h-9 mb-6 flex-no-shrink">
-                <icon type="search" class="absolute search-icon-center ml-3 text-70" />
-
-                <input
-                    class="appearance-none form-control form-input w-search pl-search"
-                    :placeholder="__('Search')"
+        <heading class="mb-4">{{ __('Translations') }}</heading>
+        <div class="flex mb-4">
+            <div class="relative h-9 w-full md:w-1/3 md:shrink-0" searchable="true">
+                <icon type="search" class="inline-block absolute ml-2 text-gray-400" role="presentation" style="top: 4px;"/>
+                <input dusk="search-input" class="appearance-none bg-white dark:bg-gray-800 shadow rounded-full h-8 w-full dark:focus:bg-gray-800 appearance-none rounded-full h-8 pl-10 w-full focus:bg-white focus:outline-none focus:ring ring-primary-200 dark:ring-gray-600 appearance-none bg-white dark:bg-gray-800 shadow rounded-full h-8 w-full dark:focus:bg-gray-800" 
+                 :placeholder="__('Search')"
                     type="search"
                     v-model="search"
                     @keydown.stop="performSearch"
-                    @search="performSearch"
-                />
+                    @search="performSearch">
             </div>
+         
             <div class="flex w-full justify-end">
-                <router-link
-                    class="cursor-pointer btn btn-default btn-primary"
-                :to="{ name: 'nova-translation.languages.translations.create', params: { language }}"
-                    
-                    :title="__('Add language')"
-                >
-                    {{ __('Add Translation') }}
-                </router-link>
+                <InertiaLink :href="novaPath+'/nova-translation/languages/translations/'+this.language+'/create'">
+                        <icon type="plus" class="w-6 h-5" view-box="0 0 22 16" />
+                        {{ __('Add Translation') }}
+                </InertiaLink>
             </div>
         </div>
 
@@ -33,11 +26,10 @@
                 
                 <div class="flex items-center ml-auto px-3">
                     <dropdown>
-                        <dropdown-trigger
-                            slot-scope="{
-                                toggle,
-                            }"
+                        <template #default>
+                            <slot name="trigger"
                             :handle-click="toggle"
+                            @click.stop
                             class="bg-30 px-3 border-2 border-30 rounded"
                             :class="{ 'bg-primary border-primary': filtersAreApplied }"
                             :active="filtersAreApplied"
@@ -47,8 +39,10 @@
                             <span v-if="filtersAreApplied" class="ml-2 font-bold text-white text-80">
                                 {{ activeFilterCount }}
                             </span>
-                        </dropdown-trigger>
-                        <dropdown-menu slot="menu" width="290" direction="rtl" :dark="true">
+                            </slot>
+                        </template>
+                        <template #menu>
+                        <DropdownMenu slot="menu" width="290" direction="rtl" :dark="true">
                             <scroll-wrap :height="350">
                                 <h3 slot="default" class="text-sm uppercase tracking-wide text-80 bg-30 p-3">
                                     {{ __('Group') }}
@@ -58,6 +52,7 @@
                                     <select
                                         class="block w-full form-control-sm form-select"
                                         :value="group"
+                                        @click.stop
                                         @change="groupChanged"
                                     >
                                         <option value="">-----</option>
@@ -80,6 +75,7 @@
                                         slot="select"
                                         class="block w-full form-control-sm form-select"
                                         :value="language"
+                                        @click.stop
                                         @change="languageChanged"
                                     >
                                         <option 
@@ -102,6 +98,7 @@
                                         dusk="per-page-select"
                                         class="block w-full form-control-sm form-select"
                                         :value="perPage"
+                                        @click.stop
                                         @change="perPageChanged"
                                     >
                                         <option value="25">25</option>
@@ -111,7 +108,8 @@
                                 </div>
 
                             </scroll-wrap>
-                        </dropdown-menu>
+                        </DropdownMenu>
+                        </template>
                     </dropdown>
                 </div>
             </div>
@@ -160,26 +158,26 @@
             </div>
             <div v-if="Object.keys(translations).length">
                 <table
-                    class="table w-full"
+                    class="table w-full w-full divide-y divide-gray-100 dark:divide-gray-700"
                     cellpadding="0"
                     cellspacing="0"
                     data-testid="resource-table"
                 >
-                    <thead>
+                    <thead class="bg-gray-50 dark:bg-gray-800">
                         <tr>
-                            <th class="text-left">{{ __('Group / Single') }}</th>
-                            <th class="text-left">{{ __('Key') }}</th>
-                            <th class="text-left">{{ sourceLanguage }}</th>
-                            <th class="w-2/5 text-left">{{ language }}</th>
+                            <th class="text-left px-2  uppercase text-gray-500 text-xxs py-2">{{ __('Group / Single') }}</th>
+                            <th class="text-left  px-2  uppercase text-gray-500 text-xxs py-2">{{ __('Key') }}</th>
+                            <th class="text-left  px-2  uppercase text-gray-500 text-xxs py-2">{{ sourceLanguage }}</th>
+                            <th class="w-2/5 text-left  px-2 uppercase text-gray-500 text-xxs py-2">{{ language }}</th>
                         </tr>
                     </thead>
 
-                    <tbody>
+                    <tbody class="divide-y divide-gray-100 dark:divide-gray-700">
                         <tr v-for="translation in translations" :key="translation.id">
-                            <td>{{ translation.group }}</td>
-                            <td>{{ translation.key }}</td>
-                            <td>{{ translation.translations[sourceLanguage] }}</td>
-                            <td>
+                            <td class="px-2 py-2 dark:bg-gray-800 group-hover:bg-gray-50 dark:group-hover:bg-gray-900">{{ translation.group }}</td>
+                            <td class="px-2 py-2 dark:bg-gray-800 group-hover:bg-gray-50 dark:group-hover:bg-gray-900">{{ translation.key }}</td>
+                            <td class="px-2 py-2 dark:bg-gray-800 group-hover:bg-gray-50 dark:group-hover:bg-gray-900">{{ translation.translations[sourceLanguage] }}</td>
+                            <td class="px-2 py-2 dark:bg-gray-800 group-hover:bg-gray-50 dark:group-hover:bg-gray-900">
                                 <translation-input
                                     :initial-translation="translation.translations[language]"
                                     :language="language" 
@@ -232,15 +230,10 @@
 
 <script>
 import TranslationInput from '../components/TranslationInput.vue';
-import { InteractsWithQueryString } from 'laravel-nova';
 
 export default {
-    mixins: [
-        InteractsWithQueryString,
-    ],
-
-    props: ['initialLanguage'],
-
+    props: ['initialLanguage', 'novaPath'],
+    
     data() {
         return {
             initialLoading: true,
@@ -258,25 +251,34 @@ export default {
             hasPreviousPages: false,
             currentPage: 1,
             nextPage: '',
-            previousPage: ''
+            previousPage: '',
+            urlParams: null,
         }
     },
 
     methods: {
+
+        updateQueryString(value) {
+            const searchURL = new URL(window.location);
+            searchURL.searchParams.set('language', this.language);
+            searchURL.searchParams.set('search', this.search);
+            searchURL.searchParams.set('page', this.currentPage);
+            searchURL.searchParams.set('per_page', this.perPage);
+            window.history.pushState({}, '', searchURL);
+        },
+
+
         listTranslations() {
             this.$nextTick(async () => {
-                const translations = await axios.get(
-                    `/nova-vendor/nova-translation/languages/${this.language}/translations`, 
-                    {
-                        params: {
+                const translations = await Nova.request().get('/nova-vendor/nova-translation/languages/'+this.language+'/translations', {
+                    params: {
                             group: this.group,
                             search: this.search,
                             page: this.currentPage,
                             per_page: this.perPage
                         }
-                    }
-                );
-                
+                })
+               
                 this.sourceLanguage = translations.data.source_language;
                 this.languages = translations.data.languages;
                 this.groups = translations.data.groups;
@@ -354,23 +356,23 @@ export default {
         },
 
         initializeSearchFromQueryString() {
-            this.search = this.$route.query['search'] || ''
+            this.search = this.urlParams.has('search') ? this.urlParams.get('search') : ''
         },
 
         initializeGroupFromQueryString() {
-            this.group = this.$route.query['group'] || ''
+            this.group = this.urlParams.has('group') ? this.urlParams.get('group') : ''
         },
 
         initializePerPageFromQueryString() {
-            this.perPage = this.$route.query['per_page'] || this.perPage
+            this.perPage = this.urlParams.has('per_page') ? this.urlParams.get('per_page') : this.perPage
         },
 
         initializeLanguageFromQueryString() {
-            this.language = this.$route.query['language'] || this.initialLanguage
+            this.language = this.urlParams.has('language') ? this.urlParams.get('language') : this.initialLanguage
         },
 
         initializePageFromQueryString() {
-            this.currentPage = this.$route.query['page'] || this.currentPage
+            this.currentPage = this.urlParams.has('page') ? this.urlParams.get('page') : this.currentPage
         }
     },
 
@@ -379,6 +381,8 @@ export default {
     },
 
     async created() {
+        this.urlParams = new URLSearchParams(window.location.search);
+
         this.initializeSearchFromQueryString()
         this.initializeGroupFromQueryString()
         this.initializePerPageFromQueryString()
