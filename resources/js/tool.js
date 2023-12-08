@@ -1,26 +1,19 @@
-Nova.booting((Vue, router) => {
-    router.addRoutes([
-        {
-            name: 'nova-translation',
-            path: '/nova-translation',
-            component: require('./views/LanguagesIndex'),
-        },
-        {
-            name: 'nova-translation.languages.create',
-            path: '/nova-translation/languages/create',
-            component: require('./views/LanguagesCreate'),
-        },
-        {
-            name: 'nova-translation.languages.translations.index',
-            path: '/nova-translation/languages/translations',
-            component: require('./views/TranslationsIndex'),
-            props: true
-        },
-        {
-            name: 'nova-translation.languages.translations.create',
-            path: '/nova-translation/languages/:language/translations/create',
-            component: require('./views/TranslationsCreate'),
-            props: true
-        },
-    ])
+// Nova.booting((Vue) => {
+//     window.Vue.use = Vue.use;
+//     Vue.inertia("NovaTranslation", require("./views/LanguagesIndex").default);
+//     Vue.inertia("NovaTranslationLangCreate", require("./views/LanguagesCreate").default);
+//     Vue.inertia("NovaTranslationTranslationIndex", require("./views/TranslationsIndex").default);
+//     Vue.inertia("NovaTranslationTranslationsCreate", require("./views/TranslationsCreate").default);
+// });
+
+import LanguagesIndex from './views/LanguagesIndex'
+import LanguagesCreate from './views/LanguagesCreate'
+import TranslationsIndex from './views/TranslationsIndex'
+import TranslationsCreate from './views/TranslationsCreate'
+
+Nova.booting((app, store) => {
+  Nova.inertia('LanguageIndex', LanguagesIndex)
+  Nova.inertia('LanguageCreate', LanguagesCreate)
+  Nova.inertia('TranslationIndex', TranslationsIndex)
+  Nova.inertia('TranslationCreate', TranslationsCreate)
 })

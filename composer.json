@@ -7,8 +7,11 @@
     ],
     "license": "MIT",
     "require": {
-        "php": ">=7.1.0",
-        "joedixon/laravel-translation": "^1.0.0"
+        "php": "^7.3|^8.0",
+        "joedixon/laravel-translation": "^2.0.0"
+    },
+    "require-dev": {
+        "laravel/nova": "^4"
     },
     "autoload": {
         "psr-4": {
@@ -25,6 +28,12 @@
     "config": {
         "sort-packages": true
     },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://nova.laravel.com"
+        }
+    ],
     "minimum-stability": "dev",
     "prefer-stable": true
 }
